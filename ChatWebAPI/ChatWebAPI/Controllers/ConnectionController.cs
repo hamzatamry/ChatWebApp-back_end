@@ -36,7 +36,7 @@ namespace ChatWeb.Api.Controllers
             try
             {
                 _connectionService.AddConnection(connectionModel.UserId, connectionModel.ConnectionId);
-                return Ok("Connection created");
+                return Ok(new { message = "Connection created" });
             }
             catch(Exception ex)
             {

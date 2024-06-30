@@ -21,7 +21,7 @@ namespace ChatWeb.Api.Controllers
             try
             {
                 _authService.Register(model.Email, model.Password);
-                return Ok("Registration succeeded");
+                return Ok(new { message = "Registration succeeded" });
             }
             catch (Exception ex)
             {
