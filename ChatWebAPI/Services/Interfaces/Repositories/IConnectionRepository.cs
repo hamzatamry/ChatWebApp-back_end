@@ -8,6 +8,8 @@ namespace ChatWeb.Core.Interfaces.Repositories
 
         public string GetConnectionByUserId(int userId);
 
+        public Connection GetConnectionByConnectionId(string connectionId);
+
         public void AddConnection(Connection connection);
 
         public void UpdateConnection(Connection connection);

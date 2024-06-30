@@ -26,6 +26,11 @@ namespace ChatWeb.Api.Hubs
             _connectionService.AddConnection(connectionModel.UserId, connectionModel.ConnectionId);
         }
 
+        public void DeleteConnection(string connectionId)
+        {
+            _connectionService.DeleteConnection(connectionId);
+        }
+
         public async Task AddMessage(int senderId, int receiverId, string message)
         {
             var receiverConnectionId = _connectionService.GetConnectionByUserId(receiverId);

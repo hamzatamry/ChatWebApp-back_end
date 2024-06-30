@@ -17,6 +17,6 @@ namespace ChatWeb.Core.Interfaces
         public void AddConnection(int userId, string connectionId);
         public void UpdateConnection(int userId, string connectionId);
 
-        public void deleteConnection(string connectionId);
+        public void DeleteConnection(string connectionId);
     }
 }

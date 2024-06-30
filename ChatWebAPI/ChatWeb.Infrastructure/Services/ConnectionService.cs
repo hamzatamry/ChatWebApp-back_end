@@ -43,9 +43,10 @@ namespace ChatWeb.Infrastructure.Services
             
         }
 
-        public void deleteConnection(string connectionId)
+        public void DeleteConnection(string connectionId)
         {
-
+            Connection connection = _connectionRepository.GetConnectionByConnectionId(connectionId);
+            _connectionRepository.DeleteConnection(connection);
         }
 
         private Connection ConvertToConnection(int userId, string connectionId)

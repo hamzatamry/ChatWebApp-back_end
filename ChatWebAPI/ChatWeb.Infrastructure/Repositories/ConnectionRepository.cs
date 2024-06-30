@@ -30,6 +30,14 @@ namespace ChatWeb.Infrastructure.Repositories
                                 .FirstOrDefault();
         }
 
+        public Connection GetConnectionByConnectionId(string connectionId)
+        {
+            return _db.Connections
+                    .Where(c => c.ConnectionId == connectionId)
+                        .OrderByDescending(c => c.ConnectedAt)
+                                .FirstOrDefault();
+        }
+
         public void AddConnection(Connection connection)
         {
             _db.Connections.Add(connection);
@@ -44,6 +52,7 @@ namespace ChatWeb.Infrastructure.Repositories
         public void DeleteConnection(Connection connection)
         {
             _db.Connections.Remove(connection);
+            _db.SaveChanges();
         }
     }
 }
