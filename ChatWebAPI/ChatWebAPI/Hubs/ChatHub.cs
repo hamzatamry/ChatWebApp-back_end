@@ -1,30 +1,36 @@
-﻿using ChatWeb.Core.Interfaces;
+﻿using ChatWeb.Api.Models;
+using ChatWeb.Core.Interfaces;
 using ChatWeb.Core.Interfaces.Services;
+using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.SignalR;
 
 namespace ChatWeb.Api.Hubs
 {
     public class ChatHub : Hub
     {
-        private readonly IChatHubService _chatHubService;
+        private readonly IMessageService _messageService;
         private readonly IConnectionService _connectionService;
         private readonly IUserService _userService;
 
 
-        public ChatHub(IChatHubService chatHubService, IConnectionService connectionService,
+        public ChatHub(IMessageService messageService, IConnectionService connectionService,
            IUserService userService)
         {
-            _chatHubService = chatHubService;
+            _messageService = messageService;
             _connectionService = connectionService;
             _userService = userService;
         }
 
+        public void AddConnection([FromBody] ConnectionModel connectionModel)
+        {
+            _connectionService.AddConnection(connectionModel.UserId, connectionModel.ConnectionId);
+        }
 
-        public async Task SendMessage(int senderId, int receiverId, string message)
+        public async Task AddMessage(int senderId, int receiverId, string message)
         {
             var receiverConnectionId = _connectionService.GetConnectionByUserId(receiverId);
 
-            _chatHubService.SendMessage(senderId, receiverId, message);
+            _messageService.AddMessage(senderId, receiverId, message);
 
             //if the user is connected
             if (receiverConnectionId != null)
@@ -40,5 +46,6 @@ namespace ChatWeb.Api.Hubs
 
             }       
         }
+  
     }
 }

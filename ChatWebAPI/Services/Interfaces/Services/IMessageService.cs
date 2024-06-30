@@ -10,5 +10,7 @@ namespace ChatWeb.Core.Interfaces.Services
     public interface IMessageService
     {
         public IEnumerable<Message> GetMessagesByUserId(int userId);
+
+        public Task AddMessage(int senderId, int receiverId, string message);
     }
 }

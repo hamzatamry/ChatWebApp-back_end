@@ -2,6 +2,7 @@
 using ChatWeb.Core.Interfaces.Repositories;
 using ChatWeb.Core.Interfaces.Services;
 using ChatWeb.Core.Models;
+using ChatWeb.Infrastructure.Repositories;
 
 namespace ChatWeb.Infrastructure.Services
 {
@@ -9,11 +10,16 @@ namespace ChatWeb.Infrastructure.Services
     {
         private readonly IUserService _userService;
         private readonly IConnectionRepository _connectionRepository;
+        private readonly IUserRepository _userRepository;
+        private readonly IMessageRepository _messageRepository;
 
-        public ConnectionService(IUserService userService, IConnectionRepository connectionRepository) 
+        public ConnectionService(IUserService userService, IConnectionRepository connectionRepository,
+            IUserRepository userRepository, IMessageRepository messageRepository) 
         {
             this._userService = userService;
             this._connectionRepository = connectionRepository;
+            this._userRepository = userRepository;
+            this._messageRepository = messageRepository;
         }
 
         public string GetConnectionByUserId(int userID)

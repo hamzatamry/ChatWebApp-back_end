@@ -49,7 +49,6 @@ builder.Services.AddSignalR(options => {
 
 builder.Services.AddTransient<IConnectionRepository, ConnectionRepository>();
 builder.Services.AddTransient<IConnectionService, ConnectionService>();
-builder.Services.AddTransient<IChatHubService, ChatHubService>();
 builder.Services.AddTransient<IMessageRepository, MessageRepository>();
 builder.Services.AddTransient<IMessageService, MessageService>();
 

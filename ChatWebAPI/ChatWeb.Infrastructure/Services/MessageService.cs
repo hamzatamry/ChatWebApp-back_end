@@ -21,5 +21,22 @@ namespace ChatWeb.Infrastructure.Services
 
             return _messageRepository.GetMessagesByUserId(user);
         }
+
+        public async Task AddMessage(int senderId, int receiverId, string message)
+        {
+            //retrive both senderUser and receiver user
+            User senderUser = _userRepository.GetUserById(senderId);
+            User receiverUser = _userRepository.GetUserById(receiverId);
+
+            var newMessage = new Message
+            {
+                Sender = senderUser,
+                Receiver = receiverUser,
+                Content = message,
+                SentAt = DateTime.Now
+            };
+
+            _messageRepository.SaveMessageAsync(newMessage);
+        }
     }
 }
