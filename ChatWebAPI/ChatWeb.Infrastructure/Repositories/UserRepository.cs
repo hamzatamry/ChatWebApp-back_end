@@ -1,12 +1,6 @@
 ﻿using ChatWeb.Core.Interfaces.Repositories;
 using ChatWeb.Core.Models;
 using ChatWeb.Infrastructure.Data;
-using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChatWeb.Infrastructure.Repositories
 {

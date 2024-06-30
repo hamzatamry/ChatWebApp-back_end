@@ -1,8 +1,5 @@
-﻿using ChatWeb.Api.Models;
-using ChatWeb.Core.Interfaces.Services;
+﻿using ChatWeb.Core.Interfaces.Services;
 using ChatWeb.Core.Models;
-using ChatWeb.Infrastructure.Services;
-using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
 
 namespace ChatWeb.Api.Controllers

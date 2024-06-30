@@ -1,20 +1,12 @@
 ﻿using ChatWeb.Core.Interfaces.Repositories;
 using ChatWeb.Core.Interfaces.Services;
 using ChatWeb.Core.Models;
-using ChatWeb.Infrastructure.Data;
-using ChatWeb.Infrastructure.Repositories;
-using Microsoft.AspNetCore.Mvc;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
-using System;
-using System.Collections.Generic;
 using System.IdentityModel.Tokens.Jwt;
-using System.Linq;
 using System.Security.Claims;
 using System.Security.Cryptography;
-using System.Security.Cryptography.X509Certificates;
 using System.Text;
-using System.Threading.Tasks;
 
 namespace ChatWeb.Infrastructure.Services
 {

@@ -1,11 +1,6 @@
 ﻿using ChatWeb.Core.Interfaces;
 using ChatWeb.Core.Interfaces.Services;
-using ChatWeb.Core.Models;
-using ChatWeb.Infrastructure.Data;
-using ChatWeb.Infrastructure.Services;
 using Microsoft.AspNetCore.SignalR;
-using Microsoft.EntityFrameworkCore;
-using static Microsoft.EntityFrameworkCore.DbLoggerCategory.Database;
 
 namespace ChatWeb.Api.Hubs
 {
@@ -41,7 +36,7 @@ namespace ChatWeb.Api.Hubs
             }
             else //if the user is not connected
             {
-                //i should add A messageQueing service for non logged in users
+                //i should add some sort of message Queing service for non logged in users
 
             }       
         }

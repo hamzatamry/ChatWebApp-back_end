@@ -1,9 +1,6 @@
 ﻿using ChatWeb.Core.Interfaces.Services;
 using ChatWeb.Core.Models;
 using Microsoft.AspNetCore.Mvc;
-using Microsoft.Extensions.Logging.Abstractions;
-using System.Text.Json.Serialization;
-using System.Text.Json;
 using ChatWeb.Api.Models;
 
 namespace ChatWeb.Api.Controllers

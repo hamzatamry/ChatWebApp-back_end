@@ -1,13 +1,6 @@
 ﻿using ChatWeb.Core.Interfaces.Repositories;
 using ChatWeb.Core.Interfaces.Services;
 using ChatWeb.Core.Models;
-using ChatWeb.Infrastructure.Repositories;
-using System;
-using System.Collections;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace ChatWeb.Infrastructure.Services
 {
